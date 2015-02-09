@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:expandable="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:descendantFocusability="afterDescendants">
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:src="@android:drawable/ic_input_add"
+        android:id="@+id/ic_open"
+        android:clickable="true">
+    </ImageView>
+
+    <TextView
+        android:layout_width="1dp"
+        android:layout_height="1dp"
+        android:visibility="gone"
+        android:id="@+id/header_text">
+
+    </TextView>
+
+    <com.andexert.expandablelayout.library.ExpandableLayoutItem
+        android:id="@+id/row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        expandable:el_headerLayout="@layout/view_header"
+        expandable:el_contentLayout="@layout/view_folder_content"
+        android:descendantFocusability="afterDescendants">
+
+        <include layout="@layout/folder_row"
+            android:id="@+id/folder_tab_row"/>
+
+    </com.andexert.expandablelayout.library.ExpandableLayoutItem>
+
+</LinearLayout>
